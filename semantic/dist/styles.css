@@ -24,7 +24,6 @@
     color: white !important;
 }
 .text-center{
-    /*text-align: center !important;*/
     margin: 0 auto;
 
 }
@@ -36,7 +35,103 @@
     -webkit-transform: translate(-50%,-50%);
     width: auto;
 }
+/*
 
+SCATTERED HEXAGONS
+
+*/
+.hexagon-mini-1 {
+  position: relative;
+  width: 20px;
+  height: 11.55px;
+  background-color: #cde2ec;
+  margin: 5.77px 0;
+}
+
+.hexagon-mini-1:before,
+.hexagon-mini-1:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+}
+.hex-left-large{
+    left: -150%;
+}
+.hex-right-med{
+    right: -150%;
+}
+.hex-left-small{
+    left: -50%;
+}
+.hexagon-mini-1:before {
+  bottom: 100%;
+  border-bottom: 5.77px solid #cde2ec;
+}
+
+.hexagon-mini-1:after {
+  top: 100%;
+  width: 0;
+  border-top: 5.77px solid #cde2ec;
+}
+.hexagon-mini-2 {
+  position: relative;
+  width: 40px;
+  height: 23.09px;
+  background-color: #cde2ec;
+  margin: 11.55px 0;
+}
+
+.hexagon-mini-2:before,
+.hexagon-mini-2:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+}
+
+.hexagon-mini-2:before {
+  bottom: 100%;
+  border-bottom: 11.55px solid #cde2ec;
+}
+
+.hexagon-mini-2:after {
+  top: 100%;
+  width: 0;
+  border-top: 11.55px solid #cde2ec;
+}.hexagon-mini-3 {
+  position: relative;
+  width: 60px;
+  height: 34.64px;
+  background-color: #cde2ec;
+  margin: 17.32px 0;
+}
+
+.hexagon-mini-3:before,
+.hexagon-mini-3:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+}
+
+.hexagon-mini-3:before {
+  bottom: 100%;
+  border-bottom: 17.32px solid #cde2ec;
+}
+
+.hexagon-mini-3:after {
+  top: 100%;
+  width: 0;
+  border-top: 17.32px solid #cde2ec;
+}
+/*
+HEADER IMAGE HEXAGON
+
+*/
 .hexagonPic {
   position: relative;
   width: 100px;
