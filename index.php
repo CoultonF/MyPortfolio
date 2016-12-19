@@ -114,9 +114,9 @@
                             <div class="ui grid">
                                 <div class="three column row">
                                     <div class="column">
-                                        <a class="ui black large ribbon label"><i class="github icon"></i>GitHub</a><br><br>
-                                        <a class="ui blue large ribbon label"><i class="linkedin icon"></i>LinkedIn</a><br><br>
-                                        <a class="ui teal large ribbon label"><i class="mail icon"></i>Email</a><br><br>
+                                        <a href="http://www.github.com/CoultonF" class="ui black large ribbon label"><i class="github icon"></i>GitHub</a><br><br>
+                                        <a href="https://ca.linkedin.com/in/coultonf" class="ui blue large ribbon label"><i class="linkedin icon"></i>LinkedIn</a><br><br>
+                                        <div class="ui teal large ribbon label disabled" style="text-decoration: line-through;"><i class="mail icon"></i>Email</div><br><br>
                                     </div>
 
                                     <div class="column">
