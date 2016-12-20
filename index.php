@@ -2,9 +2,17 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <meta name="description" content="Meet Coulton Fraser. A 3rd year BCIS student interested in mobile and web application development.">
+    <meta name="keywords" content="Coulton Fraser, Portfolio, Calgary, Bachelor of Computer Information Systems, Mount Royal University, Website Development, Mobile Applications, Student">
+    <meta name="author" content="Coulton Fraser">
+
     <title>Projects by Coulton</title>
     <link rel="stylesheet" href="semantic/dist/styles.css">
     <link rel="stylesheet" href="semantic/dist/semantic.min.css">
+
+
+
+
 
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
@@ -12,6 +20,7 @@
 </script>
 </head>
 <body class="backgroundContainer">
+    <?php include_once("includes/analyticstracking.php") ?>
     <header>
 
     </header>
