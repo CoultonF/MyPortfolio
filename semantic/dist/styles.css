@@ -6,12 +6,17 @@
     left: 0;
     right: 0;
 }
-.fixed-container{
-    position: fixed;
+.normal-flow-container{
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
 }
+.fixed{
+    position: fixed;
+}
 .container-abs{
-    position: absolute;;
+    position: absolute;
     left: 50%;
     top: 10%;
     transform: translate(-50%,-50%);
@@ -203,7 +208,7 @@ HEADER IMAGE HEXAGON
 
     position: fixed;
     background: linear-gradient(141deg, #80bbd9 0%, #3b7d9f 51%, #206284 75%);
-    height: 100vh;
+    height: 100%;
     width: 100%;
 }
 

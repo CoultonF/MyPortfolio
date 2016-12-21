@@ -16,14 +16,13 @@
 
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script></script>
-    
 </head>
 <body class="backgroundContainer">
     <?php include_once("includes/analyticstracking.php") ?>
     <header>
 
     </header>
-    <div class="hex-container">
+    <div class="hex-container fixed">
 
 
         <?php
@@ -118,78 +117,79 @@
                 </script>
 
                 <?php $total += $size;}} ?>
-                <div class="container-abs">
-                    <div class="fixed-container">
 
-                        <div class="segment ui">
+            </div>
+            <div class="container-abs">
+                <div class="normal-flow-container">
 
-                            <h1 class="ui center aligned header">Meet Coulton</h1>
-                            <div class="ui grid">
-                                <div class="three column row">
-                                    <div class="column">
-                                        <a href="http://www.github.com/CoultonF" class="ui black large ribbon label"><i class="github icon"></i>GitHub</a><br><br>
-                                        <a href="https://ca.linkedin.com/in/coultonf" class="ui blue large ribbon label"><i class="linkedin icon"></i>LinkedIn</a><br><br>
-                                        <div class="ui teal large ribbon label disabled" style="text-decoration: line-through;"><i class="mail icon"></i>Email</div><br><br>
-                                    </div>
+                    <div class="segment ui">
 
-                                    <div class="column">
-                                        <div class="image-abs">
-                                            <div class="hexagonPic">
-                                                <div class="hexTop"></div>
-                                                <div class="hexBottom"></div>
-                                            </div>
-
-                                        </div>
-                                        <div class="image-abs">
-                                            <div class="hexagon-mini-1 hex-left-small"></div>
-                                            <div class="hexagon-mini-2 hex-right-med"></div>
-                                            <div class="hexagon-mini-3 hex-left-large"></div>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="column"></div>
+                        <h1 class="ui center aligned header">Meet Coulton</h1>
+                        <div class="ui grid">
+                            <div class="three column row">
+                                <div class="column">
+                                    <a href="http://www.github.com/CoultonF" class="ui black large ribbon label"><i class="github icon"></i>GitHub</a><br><br>
+                                    <a href="https://ca.linkedin.com/in/coultonf" class="ui blue large ribbon label"><i class="linkedin icon"></i>LinkedIn</a><br><br>
+                                    <div class="ui teal large ribbon label disabled" style="text-decoration: line-through;"><i class="mail icon"></i>Email</div><br><br>
                                 </div>
-                            </div>
 
-                        </div>
-                        <div class="segment ui">
-                            <h2 class="ui centered aligned header">Projects</h2>
-                            <a href="http://www.art-store.coultonfraser.com" class="ui red right ribbon label">Visit</a><br><br>
+                                <div class="column">
+                                    <div class="image-abs">
+                                        <div class="hexagonPic">
+                                            <div class="hexTop"></div>
+                                            <div class="hexBottom"></div>
+                                        </div>
 
-                            <div class="ui items">
+                                    </div>
+                                    <div class="image-abs">
+                                        <div class="hexagon-mini-1 hex-left-small"></div>
+                                        <div class="hexagon-mini-2 hex-right-med"></div>
+                                        <div class="hexagon-mini-3 hex-left-large"></div>
+                                    </div>
 
-  <div class="item">
-    <div class="image">
-      <img src="images/art-store-image.png">
-    </div>
-    <div class="content">
-      <a class="header" href="http://www.art-store.coultonfraser.com">Art Store - Web Dev II Assignment</a>
-      <div class="meta">
-        <span>This website <em>asynchronously</em> uses cookies, sessions, and query strings to create an experience that is seamless for the user. Developed using PHP, JavaScript, jQuery, and built ontop of a mySQL database. </span>
-      </div>
-      <div class="description">
-        <p></p>
-      </div>
-      <div class="extra">
-        <a href="https://github.com/CoultonF/COMP3512_ASG2"><i class="github icon"></i>View Source on GitHub</a>
-      </div>
-    </div>
-  </div>
-</div>
+                                </div>
 
-                            <div class="ui fluid two item menu">
-                                <a class="item">Previous</a>
-                                <a class="item">Next</a>
+                                <div class="column"></div>
                             </div>
                         </div>
 
                     </div>
+                    <div class="segment ui">
+                        <h2 class="ui centered aligned header">Projects</h2>
+                        <a href="http://www.art-store.coultonfraser.com" class="ui red right ribbon label">Visit</a><br><br>
 
+                        <div class="ui items">
+
+                            <div class="item">
+                                <div class="image">
+                                    <img src="images/art-store-image.png">
+                                </div>
+                                <div class="content">
+                                    <a class="header" href="http://www.art-store.coultonfraser.com">Art Store - Web Dev II Assignment</a>
+                                    <div class="meta">
+                                        <span>This website <em>asynchronously</em> uses cookies, sessions, and query strings to create an experience that is seamless for the user. Developed using PHP, JavaScript, jQuery, and built ontop of a mySQL database. </span>
+                                    </div>
+                                    <div class="description">
+                                        <p></p>
+                                    </div>
+                                    <div class="extra">
+                                        <a href="https://github.com/CoultonF/COMP3512_ASG2"><i class="github icon"></i>View Source on GitHub</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="ui fluid two item menu">
+                            <a class="item">Previous</a>
+                            <a class="item">Next</a>
+                        </div>
+                    </div>
 
                 </div>
-            </div>
 
+
+            </div>
         </div>
     </div>
 
