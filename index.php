@@ -15,9 +15,8 @@
 
 
 
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-
-</script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script></script>
+    
 </head>
 <body class="backgroundContainer">
     <?php include_once("includes/analyticstracking.php") ?>
@@ -69,8 +68,13 @@
                 <script>
 
                 //DYNAMICALLY SET THE HEXAGONAL CSS VALUES
-                $(function(){
 
+                //TODO make the below function fully created using javascript to avoid a web service call
+
+                //TODO also implement animations using the animate.css file and toggle the classes.
+
+
+                $(function(){
                     $("#hex<?php echo $i ?>").css("position", "relative");
 
                     $("#hex<?php echo $i ?>").css("width", "<?php echo $size ?>px");
@@ -108,8 +112,8 @@
                     $("head").append("<style>#hex<?php echo $i ?>.hexagon:after{top: 100%; width: 0; border-top: <?php echo $margin ?>px solid <?php echo $colors[$color] ?>;}</style>");
 
                     $("head").append("<style>#hex<?php echo $i ?>.hexagon:before, #hex<?php echo $i ?>.hexagon:after {border-left: <?php echo $border ?>px solid transparent;border-right: <?php echo $border ?>px solid transparent;}</style>");
+                })
 
-                });
 
                 </script>
 
