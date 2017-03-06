@@ -6,6 +6,26 @@
     left: 0;
     right: 0;
 }
+
+.remove{
+    display: none;
+}
+
+
+.fixed-pos{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 1000%;
+    left: 50%;
+    margin-top: 100px; /* Negative half of height. */
+    margin-left: -250px; /* Negative half of width. */
+}
+
+.z-low{
+    z-index: -1;
+}
+
 .normal-flow-container{
     position: absolute;
     top: 0;
@@ -46,20 +66,20 @@ SCATTERED HEXAGONS
 
 */
 .hexagon-mini-1 {
-  position: relative;
-  width: 20px;
-  height: 11.55px;
-  background-color: #cde2ec;
-  margin: 5.77px 0;
+    position: relative;
+    width: 20px;
+    height: 11.55px;
+    background-color: #cde2ec;
+    margin: 5.77px 0;
 }
 
 .hexagon-mini-1:before,
 .hexagon-mini-1:after {
-  content: "";
-  position: absolute;
-  width: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
+    content: "";
+    position: absolute;
+    width: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
 }
 .hex-left-large{
     left: -150%;
@@ -71,332 +91,332 @@ SCATTERED HEXAGONS
     left: -50%;
 }
 .hexagon-mini-1:before {
-  bottom: 100%;
-  border-bottom: 5.77px solid #cde2ec;
+    bottom: 100%;
+    border-bottom: 5.77px solid #cde2ec;
 }
 
 .hexagon-mini-1:after {
-  top: 100%;
-  width: 0;
-  border-top: 5.77px solid #cde2ec;
+    top: 100%;
+    width: 0;
+    border-top: 5.77px solid #cde2ec;
 }
 .hexagon-mini-2 {
-  position: relative;
-  width: 40px;
-  height: 23.09px;
-  background-color: #cde2ec;
-  margin: 11.55px 0;
+    position: relative;
+    width: 40px;
+    height: 23.09px;
+    background-color: #cde2ec;
+    margin: 11.55px 0;
 }
 
 .hexagon-mini-2:before,
 .hexagon-mini-2:after {
-  content: "";
-  position: absolute;
-  width: 0;
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
+    content: "";
+    position: absolute;
+    width: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
 }
 
 .hexagon-mini-2:before {
-  bottom: 100%;
-  border-bottom: 11.55px solid #cde2ec;
+    bottom: 100%;
+    border-bottom: 11.55px solid #cde2ec;
 }
 
 .hexagon-mini-2:after {
-  top: 100%;
-  width: 0;
-  border-top: 11.55px solid #cde2ec;
-}.hexagon-mini-3 {
-  position: relative;
-  width: 60px;
-  height: 34.64px;
-  background-color: #cde2ec;
-  margin: 17.32px 0;
-}
-
-.hexagon-mini-3:before,
-.hexagon-mini-3:after {
-  content: "";
-  position: absolute;
-  width: 0;
-  border-left: 30px solid transparent;
-  border-right: 30px solid transparent;
-}
-
-.hexagon-mini-3:before {
-  bottom: 100%;
-  border-bottom: 17.32px solid #cde2ec;
-}
-
-.hexagon-mini-3:after {
-  top: 100%;
-  width: 0;
-  border-top: 17.32px solid #cde2ec;
-}
-/*
-HEADER IMAGE HEXAGON
-
-*/
-.hexagonPic {
-  position: relative;
-  width: 100px;
-  height: 57.74px;
-  margin: 28.87px 0;
-  background-image: url("../../images/headshot.jpg");
-  background-size: auto 115.4701px;
-  background-position: center;
-}
-
-.hexTop,
-.hexBottom {
-  position: absolute;
-  z-index: 1;
-  width: 70.71px;
-  height: 70.71px;
-  overflow: hidden;
-  -webkit-transform: scaleY(0.5774) rotate(-45deg);
-  -ms-transform: scaleY(0.5774) rotate(-45deg);
-  transform: scaleY(0.5774) rotate(-45deg);
-  background: inherit;
-  left: 14.64px;
-}
-
-/*counter transform the bg image on the caps*/
-.hexTop:after,
-.hexBottom:after {
-  content: "";
-  position: absolute;
-  width: 100.0000px;
-  height: 57.73502691896258px;
-  -webkit-transform:  rotate(45deg) scaleY(1.7321) translateY(-28.8675px);
-  -ms-transform:      rotate(45deg) scaleY(1.7321) translateY(-28.8675px);
-  transform:          rotate(45deg) scaleY(1.7321) translateY(-28.8675px);
-  -webkit-transform-origin: 0 0;
-  -ms-transform-origin: 0 0;
-  transform-origin: 0 0;
-  background: inherit;
-}
-
-.hexTop {
-  top: -35.3553px;
-}
-
-.hexTop:after {
-  background-position: center top;
-}
-
-.hexBottom {
-  bottom: -35.3553px;
-}
-
-.hexBottom:after {
-  background-position: center bottom;
-}
-
-.hexagonPic:after {
-  content: "";
-  position: absolute;
-  top: 0.0000px;
-  left: 0;
-  width: 100.0000px;
-  height: 57.7350px;
-  z-index: 2;
-  background: inherit;
-}
-/*background hexagons*/
-.hex-container{
-
-    position: fixed;
-    background: linear-gradient(141deg, #80bbd9 0%, #3b7d9f 51%, #206284 75%);
-    height: 100%;
-    width: 100%;
-}
-
-.hex-item{
-    position: absolute;
-    top: 80%;
-    left: 90%;
-}
-
-#hex0.hexagon:before,
-#hex0.hexagon:after {
-    content: "";
-    position: absolute;
+    top: 100%;
     width: 0;
+    border-top: 11.55px solid #cde2ec;
+    }.hexagon-mini-3 {
+        position: relative;
+        width: 60px;
+        height: 34.64px;
+        background-color: #cde2ec;
+        margin: 17.32px 0;
+    }
 
-}
-#hex1.hexagon:before,
-#hex1.hexagon:after {
-    content: "";
-    position: absolute;
-    width: 0;
+    .hexagon-mini-3:before,
+    .hexagon-mini-3:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        border-left: 30px solid transparent;
+        border-right: 30px solid transparent;
+    }
 
-}
-#hex2.hexagon:before,
-#hex2.hexagon:after {
-    content: "";
-    position: absolute;
-    width: 0;
+    .hexagon-mini-3:before {
+        bottom: 100%;
+        border-bottom: 17.32px solid #cde2ec;
+    }
 
-}
-#hex3.hexagon:before,
-#hex3.hexagon:after {
-    content: "";
-    position: absolute;
-    width: 0;
+    .hexagon-mini-3:after {
+        top: 100%;
+        width: 0;
+        border-top: 17.32px solid #cde2ec;
+    }
+    /*
+    HEADER IMAGE HEXAGON
 
-}
-#hex4.hexagon:before,
-#hex4.hexagon:after {
-    content: "";
-    position: absolute;
-    width: 0;
+    */
+    .hexagonPic {
+        position: relative;
+        width: 100px;
+        height: 57.74px;
+        margin: 28.87px 0;
+        background-image: url("../../images/headshot.jpg");
+        background-size: auto 115.4701px;
+        background-position: center;
+    }
 
-}
-#hex5.hexagon:before,
-#hex5.hexagon:after {
-    content: "";
-    position: absolute;
-    width: 0;
+    .hexTop,
+    .hexBottom {
+        position: absolute;
+        z-index: 1;
+        width: 70.71px;
+        height: 70.71px;
+        overflow: hidden;
+        -webkit-transform: scaleY(0.5774) rotate(-45deg);
+        -ms-transform: scaleY(0.5774) rotate(-45deg);
+        transform: scaleY(0.5774) rotate(-45deg);
+        background: inherit;
+        left: 14.64px;
+    }
 
-}
-#hex6.hexagon:before,
-#hex6.hexagon:after {
-    content: "";
-    position: absolute;
-    width: 0;
+    /*counter transform the bg image on the caps*/
+    .hexTop:after,
+    .hexBottom:after {
+        content: "";
+        position: absolute;
+        width: 100.0000px;
+        height: 57.73502691896258px;
+        -webkit-transform:  rotate(45deg) scaleY(1.7321) translateY(-28.8675px);
+        -ms-transform:      rotate(45deg) scaleY(1.7321) translateY(-28.8675px);
+        transform:          rotate(45deg) scaleY(1.7321) translateY(-28.8675px);
+        -webkit-transform-origin: 0 0;
+        -ms-transform-origin: 0 0;
+        transform-origin: 0 0;
+        background: inherit;
+    }
 
-}
-#hex7.hexagon:before,
-#hex7.hexagon:after {
-    content: "";
-    position: absolute;
-    width: 0;
+    .hexTop {
+        top: -35.3553px;
+    }
 
-}
-#hex8.hexagon:before,
-#hex8.hexagon:after {
-    content: "";
-    position: absolute;
-    width: 0;
+    .hexTop:after {
+        background-position: center top;
+    }
 
-}
-#hex9.hexagon:before,
-#hex9.hexagon:after {
-    content: "";
-    position: absolute;
-    width: 0;
+    .hexBottom {
+        bottom: -35.3553px;
+    }
 
-}
-#hex10.hexagon:before,
-#hex10.hexagon:after {
-    content: "";
-    position: absolute;
-    width: 0;
+    .hexBottom:after {
+        background-position: center bottom;
+    }
 
-}
-#hex11.hexagon:before,
-#hex11.hexagon:after {
-    content: "";
-    position: absolute;
-    width: 0;
+    .hexagonPic:after {
+        content: "";
+        position: absolute;
+        top: 0.0000px;
+        left: 0;
+        width: 100.0000px;
+        height: 57.7350px;
+        z-index: 2;
+        background: inherit;
+    }
+    /*background hexagons*/
+    .hex-container{
 
-}
-#hex12.hexagon:before,
-#hex12.hexagon:after {
-    content: "";
-    position: absolute;
-    width: 0;
+        position: fixed;
+        background: linear-gradient(141deg, #80bbd9 0%, #3b7d9f 51%, #206284 75%);
+        height: 100%;
+        width: 100%;
+    }
 
-}
-#hex13.hexagon:before,
-#hex13.hexagon:after {
-    content: "";
-    position: absolute;
-    width: 0;
+    .hex-item{
+        position: absolute;
+        top: 80%;
+        left: 90%;
+    }
 
-}
-#hex14.hexagon:before,
-#hex14.hexagon:after {
-    content: "";
-    position: absolute;
-    width: 0;
+    #hex0.hexagon:before,
+    #hex0.hexagon:after {
+        content: "";
+        position: absolute;
+        width: 0;
 
-}
-#hex15.hexagon:before,
-#hex15.hexagon:after {
-    content: "";
-    position: absolute;
-    width: 0;
+    }
+    #hex1.hexagon:before,
+    #hex1.hexagon:after {
+        content: "";
+        position: absolute;
+        width: 0;
 
-}
-#hex16.hexagon:before,
-#hex16.hexagon:after {
-    content: "";
-    position: absolute;
-    width: 0;
+    }
+    #hex2.hexagon:before,
+    #hex2.hexagon:after {
+        content: "";
+        position: absolute;
+        width: 0;
 
-}
-#hex17.hexagon:before,
-#hex17.hexagon:after {
-    content: "";
-    position: absolute;
-    width: 0;
+    }
+    #hex3.hexagon:before,
+    #hex3.hexagon:after {
+        content: "";
+        position: absolute;
+        width: 0;
 
-}
-#hex18.hexagon:before,
-#hex18.hexagon:after {
-    content: "";
-    position: absolute;
-    width: 0;
+    }
+    #hex4.hexagon:before,
+    #hex4.hexagon:after {
+        content: "";
+        position: absolute;
+        width: 0;
 
-}
-#hex19.hexagon:before,
-#hex19.hexagon:after {
-    content: "";
-    position: absolute;
-    width: 0;
+    }
+    #hex5.hexagon:before,
+    #hex5.hexagon:after {
+        content: "";
+        position: absolute;
+        width: 0;
 
-}
-#hex20.hexagon:before,
-#hex20.hexagon:after {
-    content: "";
-    position: absolute;
-    width: 0;
+    }
+    #hex6.hexagon:before,
+    #hex6.hexagon:after {
+        content: "";
+        position: absolute;
+        width: 0;
 
-}
-#hex21.hexagon:before,
-#hex21.hexagon:after {
-    content: "";
-    position: absolute;
-    width: 0;
+    }
+    #hex7.hexagon:before,
+    #hex7.hexagon:after {
+        content: "";
+        position: absolute;
+        width: 0;
 
-}
-#hex22.hexagon:before,
-#hex22.hexagon:after {
-    content: "";
-    position: absolute;
-    width: 0;
+    }
+    #hex8.hexagon:before,
+    #hex8.hexagon:after {
+        content: "";
+        position: absolute;
+        width: 0;
 
-}
-#hex23.hexagon:before,
-#hex23.hexagon:after {
-    content: "";
-    position: absolute;
-    width: 0;
+    }
+    #hex9.hexagon:before,
+    #hex9.hexagon:after {
+        content: "";
+        position: absolute;
+        width: 0;
 
-}
-#hex24.hexagon:before,
-#hex24.hexagon:after {
-    content: "";
-    position: absolute;
-    width: 0;
+    }
+    #hex10.hexagon:before,
+    #hex10.hexagon:after {
+        content: "";
+        position: absolute;
+        width: 0;
 
-}
-#hex25.hexagon:before,
-#hex25.hexagon:after {
-    content: "";
-    position: absolute;
-    width: 0;
+    }
+    #hex11.hexagon:before,
+    #hex11.hexagon:after {
+        content: "";
+        position: absolute;
+        width: 0;
 
-}
+    }
+    #hex12.hexagon:before,
+    #hex12.hexagon:after {
+        content: "";
+        position: absolute;
+        width: 0;
+
+    }
+    #hex13.hexagon:before,
+    #hex13.hexagon:after {
+        content: "";
+        position: absolute;
+        width: 0;
+
+    }
+    #hex14.hexagon:before,
+    #hex14.hexagon:after {
+        content: "";
+        position: absolute;
+        width: 0;
+
+    }
+    #hex15.hexagon:before,
+    #hex15.hexagon:after {
+        content: "";
+        position: absolute;
+        width: 0;
+
+    }
+    #hex16.hexagon:before,
+    #hex16.hexagon:after {
+        content: "";
+        position: absolute;
+        width: 0;
+
+    }
+    #hex17.hexagon:before,
+    #hex17.hexagon:after {
+        content: "";
+        position: absolute;
+        width: 0;
+
+    }
+    #hex18.hexagon:before,
+    #hex18.hexagon:after {
+        content: "";
+        position: absolute;
+        width: 0;
+
+    }
+    #hex19.hexagon:before,
+    #hex19.hexagon:after {
+        content: "";
+        position: absolute;
+        width: 0;
+
+    }
+    #hex20.hexagon:before,
+    #hex20.hexagon:after {
+        content: "";
+        position: absolute;
+        width: 0;
+
+    }
+    #hex21.hexagon:before,
+    #hex21.hexagon:after {
+        content: "";
+        position: absolute;
+        width: 0;
+
+    }
+    #hex22.hexagon:before,
+    #hex22.hexagon:after {
+        content: "";
+        position: absolute;
+        width: 0;
+
+    }
+    #hex23.hexagon:before,
+    #hex23.hexagon:after {
+        content: "";
+        position: absolute;
+        width: 0;
+
+    }
+    #hex24.hexagon:before,
+    #hex24.hexagon:after {
+        content: "";
+        position: absolute;
+        width: 0;
+
+    }
+    #hex25.hexagon:before,
+    #hex25.hexagon:after {
+        content: "";
+        position: absolute;
+        width: 0;
+
+    }

@@ -1,8 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html class="no-js">
+
 <head>
+    <script>
+
+    </script>
     <meta charset="utf-8">
-    <meta name="description" content="Meet Coulton Fraser. A 3rd year BCIS student interested in mobile and web application development.">
+    <meta name="description" content="Meet Coulton Fraser. A 3rd year Mount Royal University, Bachelor of Computer Information Systems student interested in mobile and web application development.">
     <meta name="keywords" content="Coulton Fraser, Portfolio, Calgary, Bachelor of Computer Information Systems, Mount Royal University, Website Development, Mobile Applications, Student">
     <meta name="author" content="Coulton Fraser">
 
@@ -65,13 +69,41 @@
                 <div class="hex-item"><div class="hexagon" id="hex<?php echo $i ?>"></div></div>
 
                 <script>
-
+                document.write('<style type="text/css">body{display:none}</style>');
+                $(function($) {
+                    $('body').css('display','block');
+                });
                 //DYNAMICALLY SET THE HEXAGONAL CSS VALUES
 
                 //TODO make the below function fully created using javascript to avoid a web service call
 
                 //TODO also implement animations using the animate.css file and toggle the classes.
+                $(function(){
 
+                    $('.project').hide();
+                    $('.second').hide();
+                    $('.first').show();
+
+                    $('#next').click(function(){
+                        if($('.first').is(':visible')){
+                            $('#previous').removeClass('disabled');
+                            $('.second').show();
+                            $('.first').hide();
+                            $(this).addClass('disabled');
+                        }
+
+                    });
+                    $('#previous').click(function(){
+                        if($('.second').is(':visible')){
+                            $('#next').removeClass('disabled');
+                            $('.first').show();
+                            $('.second').hide();
+                            $(this).addClass('disabled');
+                        }
+
+                    });
+
+                });
 
                 $(function(){
                     $("#hex<?php echo $i ?>").css("position", "relative");
@@ -112,6 +144,10 @@
 
                     $("head").append("<style>#hex<?php echo $i ?>.hexagon:before, #hex<?php echo $i ?>.hexagon:after {border-left: <?php echo $border ?>px solid transparent;border-right: <?php echo $border ?>px solid transparent;}</style>");
                 })
+
+
+
+
 
 
                 </script>
@@ -156,16 +192,25 @@
                     </div>
                     <div class="segment ui">
                         <h2 class="ui centered aligned header">Projects</h2>
-                        <a href="http://www.art-store.coultonfraser.com" class="ui red right ribbon label">Visit</a><br><br>
+                        <div class="first">
+                            <a href="http://art-store.coultonfraser.com" class="ui red right ribbon label main-url">Visit Store</a><br><br>
+                        </div>
+                        <div class="second">
+                                <a href="http://authentication.coultonfraser.com" class="ui green right ribbon label main-url">Visit Admin App</a><br><br>
+                        </div>
+                        <div class="second">
+                                <a href="http://application.coultonfraser.com" class="ui blue right ribbon label main-url">Visit User App</a><br><br>
+                        </div>
+
 
                         <div class="ui items">
 
-                            <div class="item">
+                            <div class="item project first" id="first">
                                 <div class="image">
                                     <img src="images/art-store-image.png">
                                 </div>
                                 <div class="content">
-                                    <a class="header" href="http://www.art-store.coultonfraser.com">Art Store - Web Dev II Assignment</a>
+                                    <a class="header" id="first-url" href="http://www.art-store.coultonfraser.com">Art Store - Web Dev II Assignment</a>
                                     <div class="meta">
                                         <span>This website <em>asynchronously</em> uses cookies, sessions, and query strings to create an experience that is seamless for the user. Developed using PHP, JavaScript, jQuery, and built ontop of a mySQL database. </span>
                                     </div>
@@ -178,21 +223,34 @@
                                 </div>
                             </div>
 
+
+                            <div class="item project hide second" id="second">
+                                <div class="image">
+                                    <img src="images/web3-assign1.png">
+                                </div>
+                                <div class="content">
+                                    <a class="header" id="second-url" href="http://authentication.coultonfraser.com">Node JS, Polymer Web App - Web Dev III Assignment</a>
+                                    <div class="meta">
+                                        <span> Built using NodeJS and PolyerJS. The green admin app is an administrator controller for the blue user application credentials. Sign-in on authentication server with credentials and create an account for the user application: <br><strong>Username: </strong><em>admin</em><br><strong>Password:</strong><em>admin123#</em> </span>
+                                    </div>
+                                    <div class="description">
+                                        <p></p>
+                                    </div>
+                                    <div class="extra">
+                                        <a href="https://github.com/CoultonF/Web-Development-3-Node.JS"><i class="github icon"></i>View Source on GitHub</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="ui fluid two item menu">
-                            <a class="item">Previous</a>
-                            <a class="item">Next</a>
+                            <a class="item ui button disabled" id="previous">Previous</a>
+                            <a class="item ui button" id="next">Next</a>
                         </div>
                     </div>
 
                 </div>
 
+            </body>
 
-            </div>
-        </div>
-    </div>
-
-</body>
-
-</html>
+            </html>

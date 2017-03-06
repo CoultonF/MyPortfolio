@@ -1,0 +1,88 @@
+<link rel="import" href="../lib/iron-ajax/iron-ajax.html">
+
+<link rel="import" href="../lib/polymer/polymer.html">
+
+<link rel="import" href="welcome-title.html">
+
+
+<dom-module id="remove-user">
+
+    <template>
+        <iron-ajax id="getAll" url="http://authentication.coultonfraser.com/secure/api/all" method="GET" handle-as="json" on-response="getAllCB" with-credentials='true'></iron-ajax>
+
+        <div class="ui relaxed stackable grid centered" id="admin-container">
+            <welcome-title class="ui center aligned row grid"></welcome-title>
+            <form class="ui grid remove-user hide twelve wide column" method='post' action="/secure/remove-user">
+                <h3>Remove User</h3>
+                <table class="ui unstackable celled table ">
+                    <thead>
+                        <tr><th class="nine wide">Username</th>
+                            <th class="three wide">Permission</th>
+                            <th class="one wide"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template is="dom-repeat" items="{{users}}" as="user">
+                            <tr>
+                                <td>{{user.username}}</td>
+                                <td>{{user.permission}}</td>
+                                <td class="collapsing">
+                                    <div class="ui fitted checkbox">
+                                        <input type="radio" name="removeUserData" value='{"username":"{{user.username}}","permission":"{{user.permission}}"}'> <label></label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </template>
+
+
+                    </tbody>
+                    <tfoot class="full-width">
+
+                        <tr><th colspan="3">
+
+                            <button class="right floated negative ui button"><i class="remove user icon"></i>Remove User</button>
+                        </th>
+                    </tr></tfoot>
+                </table>
+            </form>
+        </div>
+
+    </template>
+
+
+
+</dom-module>
+<script>
+
+Polymer({
+
+    is: "remove-user",
+
+    ready: function(){
+
+        //this.username = "Working";
+        this.$.getAll.generateRequest();
+
+    },
+
+    properties:{
+        _toArray: function(obj) {
+
+
+
+        }
+    },
+
+    getAllCB: function(data){
+
+        // this.users = data.detail.response;
+        console.log(data.detail.response)
+        this.users = data.detail.response;
+
+    }
+
+});
+
+
+
+</script>
