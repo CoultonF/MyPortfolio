@@ -86,15 +86,25 @@
 
                     $('#next').click(function(){
                         if($('.first').is(':visible')){
-                            $('#previous').removeClass('disabled');
                             $('.second').show();
                             $('.first').hide();
+                            $(this).addClass('disabled');
+                        }
+                        else if ($('.second').is(':visible')) {
+                            $('#previous').removeClass('disabled');
+                            $('.third').show();
+                            $('.second').hide();
                             $(this).addClass('disabled');
                         }
 
                     });
                     $('#previous').click(function(){
-                        if($('.second').is(':visible')){
+                        if($('.third').is(':visible')){
+                            $('.second').show();
+                            $('.third').hide();
+                            $(this).addClass('disabled');
+                        }
+                        else if ($('.second').is(':visible')) {
                             $('#next').removeClass('disabled');
                             $('.first').show();
                             $('.second').hide();
@@ -231,13 +241,30 @@
                                 <div class="content">
                                     <a class="header" id="second-url" href="http://authentication.coultonfraser.com">Node JS, Polymer Web App - Web Dev III Assignment</a>
                                     <div class="meta">
-                                        <span> Built using NodeJS and PolyerJS. The green admin app is an administrator controller for the blue user application credentials. Sign-in on authentication server with credentials and create an account for the user application: <br><strong>Username: </strong><em>admin</em><br><strong>Password:</strong><em>admin123#</em> </span>
+                                        <span> Built using Node and Polmyer. The green admin app is an administrator controller for the blue user application credentials. Sign-in on authentication server with credentials and create an account for the user application: <br><strong>Username: </strong><em>admin</em><br><strong>Password:</strong><em>admin123#</em> </span>
                                     </div>
                                     <div class="description">
                                         <p></p>
                                     </div>
                                     <div class="extra">
                                         <a href="https://github.com/CoultonF/Web-Development-3-Node.JS"><i class="github icon"></i>View Source on GitHub</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item project hide second" id="third">
+                                <div class="image">
+                                    <img src="images/web3-final.png">
+                                </div>
+                                <div class="content">
+                                    <a class="header" id="third-url" href="http://goodthings.coultonfraser.com">Good Things – Web 3 Final Project</a>
+                                    <div class="meta">
+                                        <span> Built using Node, Polymer, and MongoDB. This project was developed as a prototype for a Calgary startup 'Good Things'. The prototype aims to create a network of volunteers and charities of local YYC'ers.
+                                    </div>
+                                    <div class="description">
+                                        <p></p>
+                                    </div>
+                                    <div class="extra">
+                                        <a href="https://github.com/CoultonF/GoodThings"><i class="github icon"></i>View Source on GitHub</a>
                                     </div>
                                 </div>
                             </div>
