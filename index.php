@@ -82,6 +82,7 @@
 
                     $('.project').hide();
                     $('.second').hide();
+                    $('.third').hide();
                     $('.first').show();
 
                     $('#next').click(function(){
@@ -211,6 +212,9 @@
                         <div class="second">
                                 <a href="http://application.coultonfraser.com" class="ui blue right ribbon label main-url">Visit User App</a><br><br>
                         </div>
+                        <div class="third">
+                                <a href="http://goodthings.coultonfraser.com" class="ui orange right ribbon label main-url">Visit GoodThings</a><br><br>
+                        </div>
 
 
                         <div class="ui items">
@@ -251,7 +255,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="item project hide second" id="third">
+                            <div class="item project hide third" id="third">
                                 <div class="image">
                                     <img src="images/web3-final.png">
                                 </div>
