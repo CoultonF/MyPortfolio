@@ -85,38 +85,27 @@
                     $('.third').hide();
                     $('.first').show();
 
-                    $('#next').click(function(event){
-                        if($('.first').is(':visible')){
-                            $('.second').show();
-                            $('.first').hide();
-                            $(this).addClass('disabled');
-                            event.stopPropagation();
+                    function updateItems(delta)
+                    {
+                        var $items = $('#group').children();
+                        var $current = $items.filter('.current');
+                        var index = $current.index();
+                        var newIndex = index+delta;
+                        // Range check the new index
+                        newIndex = (newIndex < 0) ? 0 : ((newIndex > $items.length) ? $items.length : newIndex);
+                        if (newIndex != index){
+                            $current.removeClass('current');
+                            $current = $items.eq(newIndex).addClass('current');
+                            // Hide/show the next/prev
+                            $("#prev").toggle(!$current.is($items.first()));
+                            $("#next").toggle(!$current.is($items.last()));
                         }
-                        else if ($('.second').is(':visible')) {
-                            $('#previous').removeClass('disabled');
-                            $('.third').show();
-                            $('.second').hide();
-                            $(this).addClass('disabled');
-                            event.stopPropagation();
-                        }
-
+                    }
+                    $("#next").click(function () {
+                        updateItems(1);
                     });
-                    $('#previous').click(function(event){
-                        if($('.third').is(':visible')){
-                            $('.second').show();
-                            $('.third').hide();
-                            $(this).addClass('disabled');
-                            event.stopPropagation();
-
-                        }
-                        else if ($('.second').is(':visible')) {
-                            $('#next').removeClass('disabled');
-                            $('.first').show();
-                            $('.second').hide();
-                            $(this).addClass('disabled');
-                            event.stopPropagation();
-                        }
-
+                    $("#prev").click(function () {
+                        updateItems(-1);
                     });
 
                 });
@@ -212,19 +201,19 @@
                             <a href="http://art-store.coultonfraser.com" class="ui red right ribbon label main-url">Visit Store</a><br><br>
                         </div>
                         <div class="second">
-                                <a href="http://authentication.coultonfraser.com" class="ui green right ribbon label main-url">Visit Admin App</a><br><br>
+                            <a href="http://authentication.coultonfraser.com" class="ui green right ribbon label main-url">Visit Admin App</a><br><br>
                         </div>
                         <div class="second">
-                                <a href="http://application.coultonfraser.com" class="ui blue right ribbon label main-url">Visit User App</a><br><br>
+                            <a href="http://application.coultonfraser.com" class="ui blue right ribbon label main-url">Visit User App</a><br><br>
                         </div>
                         <div class="third">
-                                <a href="http://goodthings.coultonfraser.com" class="ui orange right ribbon label main-url">Visit GoodThings</a><br><br>
+                            <a href="http://goodthings.coultonfraser.com" class="ui orange right ribbon label main-url">Visit GoodThings</a><br><br>
                         </div>
 
 
-                        <div class="ui items">
+                        <div class="ui items group">
 
-                            <div class="item project first" id="first">
+                            <div class="item project current">
                                 <div class="image">
                                     <img src="images/art-store-image.png">
                                 </div>
@@ -243,7 +232,7 @@
                             </div>
 
 
-                            <div class="item project hide second" id="second">
+                            <div class="item project">
                                 <div class="image">
                                     <img src="images/web3-assign1.png">
                                 </div>
@@ -260,7 +249,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="item project hide third" id="third">
+                            <div class="item project">
                                 <div class="image">
                                     <img src="images/web3-final.png">
                                 </div>
@@ -268,25 +257,25 @@
                                     <a class="header" id="third-url" href="http://goodthings.coultonfraser.com">Good Things – Web 3 Final Project</a>
                                     <div class="meta">
                                         <span> Built using Node, Polymer, and MongoDB. This project was developed as a prototype for a Calgary startup 'Good Things'. The prototype aims to create a network of volunteers and charities of local YYC'ers.
-                                    </div>
-                                    <div class="description">
-                                        <p></p>
-                                    </div>
-                                    <div class="extra">
-                                        <a href="https://github.com/CoultonF/GoodThings"><i class="github icon"></i>View Source on GitHub</a>
+                                        </div>
+                                        <div class="description">
+                                            <p></p>
+                                        </div>
+                                        <div class="extra">
+                                            <a href="https://github.com/CoultonF/GoodThings"><i class="github icon"></i>View Source on GitHub</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="ui fluid two item menu">
+                                <a class="item ui button disabled" id="prev">Previous</a>
+                                <a class="item ui button" id="next">Next</a>
+                            </div>
                         </div>
 
-                        <div class="ui fluid two item menu">
-                            <a class="item ui button disabled" id="previous">Previous</a>
-                            <a class="item ui button" id="next">Next</a>
-                        </div>
                     </div>
 
-                </div>
+                </body>
 
-            </body>
-
-            </html>
+                </html>

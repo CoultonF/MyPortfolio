@@ -6,7 +6,12 @@
     left: 0;
     right: 0;
 }
-
+#group div{
+    display: none;
+}
+#group div.current{
+    display: block;
+}
 .remove{
     display: none;
 }
