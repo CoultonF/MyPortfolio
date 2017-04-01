@@ -211,7 +211,7 @@
                         </div>
 
 
-                        <div class="ui items group">
+                        <div class="ui items" id="group">
 
                             <div class="item project current">
                                 <div class="image">
