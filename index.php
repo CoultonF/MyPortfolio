@@ -79,58 +79,34 @@
 
                 //TODO also implement animations using the animate.css file and toggle the classes.
                 $(function(){
-
                     $('.project').hide();
                     $('.first').show();
                     $('.second').hide();
                     $('.third').hide();
-
-                    function updateItems(delta)
-                    {
-                        var $items = $('#group').children();
-                        var $current = $items.filter('.current');
-                        var index = $current.index();
-                        var newIndex = 2+1;
-                        // Range check the new index
-                        newIndex = (newIndex < 0) ? 0 : ((newIndex > $items.length) ? $items.length : newIndex);
-
-                        $current.removeClass('current');
-                        $current = $items.eq(newIndex).addClass('current');
-                        if(newIndex = 0){
-                            $('.first').show();
-                            $('.second').hide();
-                            $('.third').hide();
-                        }else if (newIndex = 1) {
-                            $('.first').hide();
-                            $('.second').show();
-                            $('.third').hide();
-                        }else if (newIndex = 2) {
-                            $('.first').hide();
-                            $('.second').hide();
-                            $('.third').show();
-                        }
-                        // Hide/show the next/prev
-                        if ($current.is($items.first())) {
-                            $("#prev").addClass('disable')
-                        }
-                        else {
-                            $("#prev").removeClass('disable')
-                        }
-                        if ($current.is($items.last())) {
-                            $("#next").addClass('disable')
-                        }
-                        else {
-                            $("#next").removeClass('disable')
-                        }
-
-                    }
-                    $("#next").click(function () {
-                        updateItems(1);
-                    });
-                    $("#prev").click(function () {
-                        updateItems(-1);
+                    $("#group.item").each(function(e) {
+                        if (e != 0)
+                        $(this).hide();
                     });
 
+                    $("#next").click(function(){
+                        if ($("#group.item:visible").next().length != 0)
+                        $("#group.item:visible").next().show().prev().hide();
+                        else {
+                            $("#group.item:visible").hide();
+                            $("#group.item:first").show();
+                        }
+                        return false;
+                    });
+
+                    $("#prev").click(function(){
+                        if ($("#group.item:visible").prev().length != 0)
+                        $("#group.item:visible").prev().show().next().hide();
+                        else {
+                            $("#group.item:visible").hide();
+                            $("#group.item:last").show();
+                        }
+                        return false;
+                    });
                 });
 
 
