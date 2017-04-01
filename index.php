@@ -85,42 +85,44 @@
                     $('#third').hide();
                     $('#first').show();
 
-                    function updateItems(delta)
-                    {
-                        var $items = $('#group').children();
-                        var $current = $items.filter('.current');
-                        var index = $current.index();
-                        var newIndex = index+delta;
-                        // Range check the new index
-                        newIndex = (newIndex < 0) ? 0 : ((newIndex > $items.length) ? $items.length : newIndex);
-                        if (newIndex != index){
-                            $current.removeClass('current');
-                            $current = $items.eq(newIndex).addClass('current');
-                            if(newIndex = 0){
-                                $('#first').show();
-                                $('#second').hide();
-                                $('#third').hide();
-                            }else if (newIndex = 1) {
-                                $('#first').hide();
-                                $('#second').show();
-                                $('#third').hide();
-                            }else if (newIndex = 2) {
-                                $('#first').hide();
-                                $('#second').hide();
-                                $('#third').show();
-                            }
-                            // // Hide/show the next/prev
-                            // $("#prev").toggle(!$current.is($items.first()));
-                            // $("#next").toggle(!$current.is($items.last()));
-                        }
-                    }
-                    $("#next").click(function () {
-                        updateItems(1);
-                    });
-                    $("#prev").click(function () {
-                        updateItems(-1);
-                    });
 
+
+                });
+
+                function updateItems(delta)
+                {
+                    var $items = $('#group').children();
+                    var $current = $items.filter('.current');
+                    var index = $current.index();
+                    var newIndex = index+delta;
+                    // Range check the new index
+                    newIndex = (newIndex < 0) ? 0 : ((newIndex > $items.length) ? $items.length : newIndex);
+                    if (newIndex != index){
+                        $current.removeClass('current');
+                        $current = $items.eq(newIndex).addClass('current');
+                        if(newIndex = 0){
+                            $('#first').show();
+                            $('#second').hide();
+                            $('#third').hide();
+                        }else if (newIndex = 1) {
+                            $('#first').hide();
+                            $('#second').show();
+                            $('#third').hide();
+                        }else if (newIndex = 2) {
+                            $('#first').hide();
+                            $('#second').hide();
+                            $('#third').show();
+                        }
+                        // // Hide/show the next/prev
+                        // $("#prev").toggle(!$current.is($items.first()));
+                        // $("#next").toggle(!$current.is($items.last()));
+                    }
+                }
+                $("#next").click(function () {
+                    updateItems(1);
+                });
+                $("#prev").click(function () {
+                    updateItems(-1);
                 });
 
                 $(function(){
