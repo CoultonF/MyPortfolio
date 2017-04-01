@@ -82,13 +82,15 @@
 
                     $('.project').hide();
                     $('.first').show();
+                    $('.second').hide();
+                    $('.third').hide();
 
                     function updateItems(delta)
                     {
                         var $items = $('#group').children();
                         var $current = $items.filter('.current');
                         var index = $current.index();
-                        var newIndex = index+delta;
+                        var newIndex = 2+1;
                         // Range check the new index
                         newIndex = (newIndex < 0) ? 0 : ((newIndex > $items.length) ? $items.length : newIndex);
 
