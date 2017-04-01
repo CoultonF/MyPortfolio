@@ -81,49 +81,47 @@
                 $(function(){
 
                     $('.project').hide();
-                    $('#second').hide();
-                    $('#third').hide();
-                    $('#first').show();
+                    $('.first').show();
 
-
-
-                });
-
-                function updateItems(delta)
-                {
-                    var $items = $('#group').children();
-                    var $current = $items.filter('.current');
-                    var index = $current.index();
-                    var newIndex = index+delta;
-                    // Range check the new index
-                    newIndex = (newIndex < 0) ? 0 : ((newIndex > $items.length) ? $items.length : newIndex);
-                    if (newIndex != index){
-                        $current.removeClass('current');
-                        $current = $items.eq(newIndex).addClass('current');
-                        if(newIndex = 0){
-                            $('#first').show();
-                            $('#second').hide();
-                            $('#third').hide();
-                        }else if (newIndex = 1) {
-                            $('#first').hide();
-                            $('#second').show();
-                            $('#third').hide();
-                        }else if (newIndex = 2) {
-                            $('#first').hide();
-                            $('#second').hide();
-                            $('#third').show();
+                    function updateItems(delta)
+                    {
+                        var $items = $('#group').children();
+                        var $current = $items.filter('.current');
+                        var index = $current.index();
+                        var newIndex = index+delta;
+                        // Range check the new index
+                        newIndex = (newIndex < 0) ? 0 : ((newIndex > $items.length) ? $items.length : newIndex);
+                        if (newIndex != index){
+                            $current.removeClass('current');
+                            $current = $items.eq(newIndex).addClass('current');
+                            if(newIndex = 0){
+                                $('.first').show();
+                                $('.second').hide();
+                                $('.third').hide();
+                            }else if (newIndex = 1) {
+                                $('.first').hide();
+                                $('.second').show();
+                                $('.third').hide();
+                            }else if (newIndex = 2) {
+                                $('.first').hide();
+                                $('.second').hide();
+                                $('.third').show();
+                            }
+                            // // Hide/show the next/prev
+                            // $("#prev").toggle(!$current.is($items.first()));
+                            // $("#next").toggle(!$current.is($items.last()));
                         }
-                        // // Hide/show the next/prev
-                        // $("#prev").toggle(!$current.is($items.first()));
-                        // $("#next").toggle(!$current.is($items.last()));
                     }
-                }
-                $("#next").click(function () {
-                    updateItems(1);
+                    $("#next").click(function () {
+                        updateItems(1);
+                    });
+                    $("#prev").click(function () {
+                        updateItems(-1);
+                    });
+
                 });
-                $("#prev").click(function () {
-                    updateItems(-1);
-                });
+
+
 
                 $(function(){
                     $("#hex<?php echo $i ?>").css("position", "relative");
@@ -228,7 +226,7 @@
 
                         <div class="ui items" id="group">
 
-                            <div class="item project current" id="first">
+                            <div class="item project current first" id="first">
                                 <div class="image">
                                     <img src="images/art-store-image.png">
                                 </div>
@@ -264,7 +262,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="item project" id="third">
+                            <div class="item project third" id="third">
                                 <div class="image">
                                     <img src="images/web3-final.png">
                                 </div>
