@@ -100,6 +100,7 @@
                         else {
                             $("#group .item:visible").hide();
                             $("#group .item:first").show();
+                            $('.ribbon-link').hide();
                             $('.first').show();
                         }
                         return false;
@@ -117,6 +118,7 @@
                         else {
                             $("#group .item:visible").hide();
                             $("#group .item:last").show();
+                            $('.ribbon-link').hide();
                             $('.third').show();
                         }
                         return false;
