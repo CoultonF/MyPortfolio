@@ -83,27 +83,27 @@
                     $('.first').show();
                     $('.second').hide();
                     $('.third').hide();
-                    $("#group.item").each(function(e) {
+                    $("#group .item").each(function(e) {
                         if (e != 0)
                         $(this).hide();
                     });
 
                     $("#next").click(function(){
-                        if ($("#group.item:visible").next().length != 0)
-                        $("#group.item:visible").next().show().prev().hide();
+                        if ($("#group .item:visible").next().length != 0)
+                        $("#group .item:visible").next().show().prev().hide();
                         else {
-                            $("#group.item:visible").hide();
-                            $("#group.item:first").show();
+                            $("#group .item:visible").hide();
+                            $("#group .item:first").show();
                         }
                         return false;
                     });
 
                     $("#prev").click(function(){
-                        if ($("#group.item:visible").prev().length != 0)
-                        $("#group.item:visible").prev().show().next().hide();
+                        if ($("#group .item:visible").prev().length != 0)
+                        $("#group .item:visible").prev().show().next().hide();
                         else {
-                            $("#group.item:visible").hide();
-                            $("#group.item:last").show();
+                            $("#group .item:visible").hide();
+                            $("#group .item:last").show();
                         }
                         return false;
                     });
