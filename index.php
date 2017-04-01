@@ -91,26 +91,36 @@
                         var newIndex = index+delta;
                         // Range check the new index
                         newIndex = (newIndex < 0) ? 0 : ((newIndex > $items.length) ? $items.length : newIndex);
-                        if (newIndex != index){
-                            $current.removeClass('current');
-                            $current = $items.eq(newIndex).addClass('current');
-                            if(newIndex = 0){
-                                $('.first').show();
-                                $('.second').hide();
-                                $('.third').hide();
-                            }else if (newIndex = 1) {
-                                $('.first').hide();
-                                $('.second').show();
-                                $('.third').hide();
-                            }else if (newIndex = 2) {
-                                $('.first').hide();
-                                $('.second').hide();
-                                $('.third').show();
-                            }
-                            // // Hide/show the next/prev
-                            // $("#prev").toggle(!$current.is($items.first()));
-                            // $("#next").toggle(!$current.is($items.last()));
+
+                        $current.removeClass('current');
+                        $current = $items.eq(newIndex).addClass('current');
+                        if(newIndex = 0){
+                            $('.first').show();
+                            $('.second').hide();
+                            $('.third').hide();
+                        }else if (newIndex = 1) {
+                            $('.first').hide();
+                            $('.second').show();
+                            $('.third').hide();
+                        }else if (newIndex = 2) {
+                            $('.first').hide();
+                            $('.second').hide();
+                            $('.third').show();
                         }
+                        // Hide/show the next/prev
+                        if ($current.is($items.first())) {
+                            $("#prev").addClass('disable')
+                        }
+                        else {
+                            $("#prev").removeClass('disable')
+                        }
+                        if ($current.is($items.last())) {
+                            $("#next").addClass('disable')
+                        }
+                        else {
+                            $("#next").removeClass('disable')
+                        }
+
                     }
                     $("#next").click(function () {
                         updateItems(1);
