@@ -282,7 +282,7 @@
                             </div>
 
                             <div class="ui fluid two item menu">
-                                <a class="item ui button disabled" id="prev">Previous</a>
+                                <a class="item ui button" id="prev">Previous</a>
                                 <a class="item ui button" id="next">Next</a>
                             </div>
                         </div>
