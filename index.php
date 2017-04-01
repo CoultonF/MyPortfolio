@@ -80,11 +80,6 @@
                 //TODO also implement animations using the animate.css file and toggle the classes.
                 $(function(){
 
-                    $('.project').hide();
-                    $('.second').hide();
-                    $('.third').hide();
-                    $('.first').show();
-
                     function updateItems(delta)
                     {
                         var $items = $('#group').children();
