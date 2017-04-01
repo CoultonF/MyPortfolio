@@ -88,7 +88,9 @@
                         $(this).hide();
                     });
 
-                    $("#next").click(function(){
+                    $("#next").click(function(event){
+                        event.stopPropagation();
+                        event.preventDefault();
                         if ($("#group .item:visible").next().length != 0)
                         $("#group .item:visible").next().show().prev().hide();
                         else {
@@ -98,7 +100,9 @@
                         return false;
                     });
 
-                    $("#prev").click(function(){
+                    $("#prev").click(function(event){
+                        event.stopPropagation();
+                        event.preventDefault();
                         if ($("#group .item:visible").prev().length != 0)
                         $("#group .item:visible").prev().show().next().hide();
                         else {
@@ -270,8 +274,8 @@
                             </div>
 
                             <div class="ui fluid two item menu">
-                                <a class="item ui button" id="prev">Previous</a>
-                                <a class="item ui button" id="next">Next</a>
+                                <div class="item ui button" id="prev">Previous</div>
+                                <div class="item ui button" id="next">Next</div>
                             </div>
                         </div>
 
