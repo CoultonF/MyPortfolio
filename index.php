@@ -80,6 +80,11 @@
                 //TODO also implement animations using the animate.css file and toggle the classes.
                 $(function(){
 
+                    $('.project').hide();
+                    $('#second').hide();
+                    $('#third').hide();
+                    $('#first').show();
+
                     function updateItems(delta)
                     {
                         var $items = $('#group').children();
@@ -91,9 +96,22 @@
                         if (newIndex != index){
                             $current.removeClass('current');
                             $current = $items.eq(newIndex).addClass('current');
-                            // Hide/show the next/prev
-                            $("#prev").toggle(!$current.is($items.first()));
-                            $("#next").toggle(!$current.is($items.last()));
+                            if(newIndex = 0){
+                                $('#first').show();
+                                $('#second').hide();
+                                $('#third').hide();
+                            }else if (newIndex = 1) {
+                                $('#first').hide();
+                                $('#second').show();
+                                $('#third').hide();
+                            }else if (newIndex = 2) {
+                                $('#first').hide();
+                                $('#second').hide();
+                                $('#third').show();
+                            }
+                            // // Hide/show the next/prev
+                            // $("#prev").toggle(!$current.is($items.first()));
+                            // $("#next").toggle(!$current.is($items.last()));
                         }
                     }
                     $("#next").click(function () {
@@ -208,7 +226,7 @@
 
                         <div class="ui items" id="group">
 
-                            <div class="item project current">
+                            <div class="item project current" id="first">
                                 <div class="image">
                                     <img src="images/art-store-image.png">
                                 </div>
@@ -227,7 +245,7 @@
                             </div>
 
 
-                            <div class="item project">
+                            <div class="item project second" id="second">
                                 <div class="image">
                                     <img src="images/web3-assign1.png">
                                 </div>
@@ -244,7 +262,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="item project">
+                            <div class="item project" id="third">
                                 <div class="image">
                                     <img src="images/web3-final.png">
                                 </div>
