@@ -91,11 +91,16 @@
                     $("#next").click(function(event){
                         event.stopPropagation();
                         event.preventDefault();
-                        if ($("#group .item:visible").next().length != 0)
-                        $("#group .item:visible").next().show().prev().hide();
+                        if ($("#group .item:visible").next().length != 0){
+                            $('.ribbon-link').hide();
+                            $('.' + $("#group .item:visible").attr('id')).show();
+                            $("#group .item:visible").next().show().prev().hide();
+                        }
+
                         else {
                             $("#group .item:visible").hide();
                             $("#group .item:first").show();
+                            $('.first').show();
                         }
                         return false;
                     });
@@ -104,10 +109,15 @@
                         event.stopPropagation();
                         event.preventDefault();
                         if ($("#group .item:visible").prev().length != 0)
-                        $("#group .item:visible").prev().show().next().hide();
+                        {
+                            $('.ribbon-link').hide();
+                            $('.' + $("#group .item:visible").attr('id')).show();
+                            $("#group .item:visible").prev().show().next().hide();
+                        }
                         else {
                             $("#group .item:visible").hide();
                             $("#group .item:last").show();
+                            $('.third').show();
                         }
                         return false;
                     });
@@ -202,16 +212,16 @@
                     </div>
                     <div class="segment ui">
                         <h2 class="ui centered aligned header">Projects</h2>
-                        <div class="first">
+                        <div class="first ribbon-link">
                             <a href="http://art-store.coultonfraser.com" class="ui red right ribbon label main-url">Visit Store</a><br><br>
                         </div>
-                        <div class="second">
+                        <div class="second ribbon-link">
                             <a href="http://authentication.coultonfraser.com" class="ui green right ribbon label main-url">Visit Admin App</a><br><br>
                         </div>
-                        <div class="second">
+                        <div class="second ribbon-link">
                             <a href="http://application.coultonfraser.com" class="ui blue right ribbon label main-url">Visit User App</a><br><br>
                         </div>
-                        <div class="third">
+                        <div class="third ribbon-link">
                             <a href="http://goodthings.coultonfraser.com" class="ui orange right ribbon label main-url">Visit GoodThings</a><br><br>
                         </div>
 
